@@ -1,0 +1,28 @@
+body{
+    background: radial-gradient(circle, #ffecd2, #fcf69f, #b45fe1, #05734d);
+    /* height: 100vh; */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: rgb(255, 255, 255) !important;
+}
+
+.container-add{
+    background-color: rgba(0, 0, 0, 0.349);
+    padding: 1rem;
+    border-radius: 1rem;
+    
+    
+}
+
+.table-rounded{
+    border-radius: 0.8rem !important;
+    overflow: hidden; 
+
+}
+
+.table-rounded th, .table-rounded tr{
+    padding: 1rem !important;
+}

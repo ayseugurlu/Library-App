@@ -34,8 +34,8 @@ const AddBook = ({postBook}) => {
 
    
   return (
-    <div className="container  mt-4">
-    <h1 className="display-5 text-center text-danger">My Library</h1>
+    <div className="container container-add w-75  mt-4">
+    <h1 className="display-5 text-center text-light">My Library</h1>
     <form onSubmit={handleSubmit}>
       <div className="mb-3">
         <label htmlFor="title" className="form-label">

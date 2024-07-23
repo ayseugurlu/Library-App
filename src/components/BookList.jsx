@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BiSolidEdit } from "react-icons/bi";
 import { RiDeleteBin2Fill } from "react-icons/ri";
+import EditBook from './EditBook';
 
-const BookList = ({ updateData }) => {
-    console.log(updateData);
+const BookList = ({ updateData , deleteData,putData }) => {
+    const [editBook,setEditBook]=useState("")
+    // console.log(updateData);
 
     return (
-        <div className='container mt-4'>
-            <table className='table table-striped'>
-                <thead>
+        <div className='container mt-4 book-list'>
+            <table className='table table-striped table-warning table-hover table-borderless table-rounded'>
+                <thead className='table-success'>
                     <tr>
                         <th scope='col'>ISBN</th>
                         <th scope='col'>Cover Photo</th>
@@ -30,13 +32,31 @@ const BookList = ({ updateData }) => {
                                 <td>{genre}</td>
                                 <td>{publicationYear}</td>
                                 <td>
-                                    <BiSolidEdit />
-                                    <RiDeleteBin2Fill />
+                                    <BiSolidEdit
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#editModal"
+                                    type='button'
+                                    size={22}
+                                    className='text-success cursor-pointer'
+                                    onClick={()=>setEditBook({ISBN,image,title,author,genre,publicationYear,id})}
+                                   
+
+
+                                     />
+                                    <RiDeleteBin2Fill 
+                                        type='button'
+                                        size={22}
+                                        className='text-danger cursor-pointer'
+                                        onClick={()=>deleteData(id)}
+                                    />
                                 </td>
                             </tr>
                         );
                     })}
+
+                    
                 </tbody>
+                <EditBook editBook={editBook} setEditBook={setEditBook} putData={putData}/>
             </table>
         </div>
     );
